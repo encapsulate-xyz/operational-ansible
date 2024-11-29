@@ -1,0 +1,28 @@
+---
+- name: Reload service
+  ansible.builtin.systemd:
+    daemon_reload: true
+  tags: 
+    - reload
+
+- name: Start service
+  ansible.builtin.systemd:
+    name: "{{ service_identifier }}"
+    state: started
+    enabled: true
+  tags: 
+    - start
+
+- name: Restart service
+  ansible.builtin.systemd:
+    name: "{{ service_identifier }}"
+    state: restarted
+  tags: 
+    - restart
+
+- name: Stop service
+  ansible.builtin.systemd:
+    name: "{{ service_identifier }}"
+    state: stopped
+  tags: 
+    - stop
