@@ -4,11 +4,37 @@ all:
   vars:
     env: testnet
   children:
-    sui:
+    omniflix:
       hosts:
-        bridge.sui.mainnet.encapsulate.xyz:
-          type: bridge
-        validator.sui.mainnet.encapsulate.xyz:
-          type: validator
-        fullnode.sui.mainnet.encapsulate.xyz:
-          type: fullnode
+        validator.omniflix.testnet.encapsulate.xyz:
+    quicksilver:
+      hosts:
+        validator.quicksilver.testnet.encapsulate.xyz:
+    celestia:
+      hosts:
+        validator.celestia.testnet.encapsulate.xyz:
+    humans:
+      hosts:
+        validator.humans.testnet.encapsulate.xyz:
+    ojo:
+      hosts:
+        validator.ojo.testnet.encapsulate.xyz:
+    umee:
+      hosts:
+        validator.umee.testnet.encapsulate.xyz:
+    c4e:
+      hosts:
+        validator.c4e.testnet.encapsulate.xyz:
+    axelar:
+      hosts:
+        validator.axelar.testnet.encapsulate.xyz:
+   berachain:
+      hosts:
+        fullnode.berachain.testnet.encapsulate.xyz:
+    storyprotocol:
+      hosts:
+        validator.storyprotocol.testnet.encapsulate.xyz:
+    supra:
+      hosts:
+        validator.supra.testnet.encapsulate.xyz:
+        fullnode.supra.testnet.encapsulate.xyz:
