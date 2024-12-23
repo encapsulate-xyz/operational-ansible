@@ -1,0 +1,9 @@
+---
+- name: Daily Operations
+  hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Include operations role
+      ansible.builtin.include_role:
+        name: operations
