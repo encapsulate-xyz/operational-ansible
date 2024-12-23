@@ -47,7 +47,7 @@
     state: touch
   when: command is defined and command == "create_file"
 
-- name: Set ownership 
+- name: Set ownership
   ansible.builtin.file:
     path: "{{ file_path }}"
     owner: "{{ service_identifier }}"

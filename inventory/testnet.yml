@@ -28,7 +28,7 @@ all:
     axelar:
       hosts:
         validator.axelar.testnet.encapsulate.xyz:
-   berachain:
+    berachain:
       hosts:
         fullnode.berachain.testnet.encapsulate.xyz:
     storyprotocol:
