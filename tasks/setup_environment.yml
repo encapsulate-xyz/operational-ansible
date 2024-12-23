@@ -1,0 +1,11 @@
+---
+- name: Display environment being deployed to
+  ansible.builtin.debug:
+    msg:
+      - "Service Name: {{ service_identifier }}"
+      - "Command: {{ command }}"
+      - "File Path: {{ file_path | default('Not set') }}"
+
+- name: Confirm deployment details
+  ansible.builtin.pause:
+    seconds: 40
