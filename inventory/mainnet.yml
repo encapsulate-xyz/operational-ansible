@@ -4,4 +4,3 @@ all:
   vars:
     env: mainnet
   children:
-

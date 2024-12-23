@@ -1,0 +1,62 @@
+---
+- name: Reload service
+  ansible.builtin.systemd:
+    daemon_reload: true
+  when: command is defined and command == "reload"
+
+- name: Start service
+  ansible.builtin.systemd:
+    name: "{{ service_identifier }}"
+    state: started
+    enabled: true
+  when: command is defined and command == "start"
+
+- name: Restart service
+  ansible.builtin.systemd:
+    name: "{{ service_identifier }}"
+    state: restarted
+  when: command is defined and command == "restart"
+
+- name: Stop service
+  ansible.builtin.systemd:
+    name: "{{ service_identifier }}"
+    state: stopped
+  when: command is defined and command == "stop"
+
+- name: Delete folder
+  ansible.builtin.file:
+    path: "{{ file_path }}"
+    state: absent
+  when: command is defined and command == "delete_folder"
+
+- name: Create folder
+  ansible.builtin.file:
+    path: "{{ file_path }}"
+    state: directory
+    owner: "{{ service_identifier }}"
+    group: "{{ service_identifier }}"
+    mode: "0755"
+  when: command is defined and command == "create_directory"
+
+- name: Create an empty file
+  ansible.builtin.file:
+    path: "{{ file_path }}"
+    owner: "{{ service_identifier }}"
+    group: "{{ service_identifier }}"
+    mode: "0644"
+    state: touch
+  when: command is defined and command == "create_file"
+
+- name: Set ownership
+  ansible.builtin.file:
+    path: "{{ file_path }}"
+    owner: "{{ service_identifier }}"
+    group: "{{ service_identifier }}"
+    recurse: true
+  when: command is defined and command == "set_ownership"
+
+- name: Change mode
+  ansible.builtin.file:
+    path: "{{ file_path }}"
+    mode: "{{ mode }}"
+  when: command is defined and command == "change_mode"
