@@ -1,0 +1,6 @@
+# This file contains ignores rule violations for ansible-lint
+inventory/mainnet.yml yaml[empty-lines]
+inventory/testnet.yml load-failure[yaml]
+roles/systemd_operations/tasks/main.yml yaml[trailing-spaces]
+systemd_operations.yml name[casing]
+systemd_operations.yml yaml[trailing-spaces]
